@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel='stylesheet' href='{{url_for("static", filename="style.css")}}'>
+        <title>Update Book</title>
+    </head>
+    <body>
+        <h1>Update Book</h1>
+        <form action="/update" method="POST">
+            <p>Title: <input type="text" name="title" value="{{book['title']}}"></p>
+            <p>Author: <input type="text" name="author" value="{{book['author']}}"></p>
+            <input type="hidden" name="id" value="{{book['id']}}">
+            <input type="submit" value="Update book" class="go">
+        </form>
+    </body>
+</html>

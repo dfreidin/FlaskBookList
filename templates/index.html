@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel='stylesheet' href='{{url_for("static", filename="style.css")}}'>
+        <title>My Books</title>
+    </head>
+    <body>
+        <h1>My Books</h1>
+        <table>
+            <thead>
+                <tr>
+                    <td>Title</td>
+                    <td>Author</td>
+                    <td>Date Added</td>
+                    <td>Action</td>
+                </tr>
+            </thead>
+            <tbody>
+                {% for book in books %}
+                    <tr>
+                        <td>{{book["title"]}}</td>
+                        <td>{{book["author"]}}</td>
+                        <td>{{book["added_date"]}}</td>
+                        <td><a href="destroy/{{book['id']}}">delete</a></td>
+                        <td><a href="update/{{book['id']}}">update</a></td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <button class="go" onclick="window.location.href='add'">Add a Book</button>
+    </body>
+</html>

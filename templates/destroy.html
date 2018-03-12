@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel='stylesheet' href='{{url_for("static", filename="style.css")}}'>
+        <title>Destroy a Book</title>
+    </head>
+    <body>
+        <h3>Are you sure you want to delete {{title}}?</h3>
+        <button class="stop" onclick="window.location.href='/'">Cancel</button>
+        <button class="go" onclick="window.location.href='{{id}}/delete'">Delete Book</button>
+        <!-- <form action="{{id}}delete" method="POST">
+            <input type="hidden" name="id" value="{{id}}">
+            <input class="go" type="submit", value="Delete Book">
+        </form> -->
+    </body>
+</html>
